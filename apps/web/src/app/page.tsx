@@ -1,4 +1,3 @@
-import "@piglet/ui/dist/index.css"
 import { Button } from "@piglet/ui";
 
 export default function Home() {
