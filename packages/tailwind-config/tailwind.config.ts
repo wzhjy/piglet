@@ -1,13 +1,17 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  prefix: "",
+import forms from "@tailwindcss/forms";
+import typography from "@tailwindcss/typography";
+// @ts-ignore - this package is not typed
+import scrollbarHide from "tailwind-scrollbar-hide";
+import animate from 'tailwindcss-animate';
+import type { Config } from "tailwindcss";
+import radix from "tailwindcss-radix";
+
+const config: Config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     container: {
       center: true,
@@ -73,5 +77,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [forms, typography, scrollbarHide, radix, animate],
+};
+
+export default config;
+
